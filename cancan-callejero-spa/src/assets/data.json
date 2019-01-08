@@ -1,0 +1,149 @@
+{
+    pages: [
+     {
+      name: "page1",
+      elements: [
+       {
+        type: "comment",
+        name: "question1",
+        title: "¿Por qué quieres adoptar un perro?"
+       },
+       {
+        type: "radiogroup",
+        name: "question2",
+        title: "Quieres adoptar un perro:",
+        choices: [
+         {
+          value: "Adulto",
+          text: "Cachorro"
+         },
+         {
+          value: "Cachorro",
+          text: "Adulto"
+         }
+        ]
+       },
+       {
+        type: "panel",
+        name: "panel1",
+        elements: [
+         {
+          type: "radiogroup",
+          name: "question3",
+          title: "¿Actualmente tienes animales de compañía?",
+          choices: [
+           "Si",
+           "No"
+          ]
+         },
+         {
+          type: "dropdown",
+          name: "question4",
+          visibleIf: "{question3}=='Si'",
+          title: "¿Cuántos?",
+          choices: [
+           {
+            value: "item1",
+            text: "1"
+           },
+           {
+            value: "item2",
+            text: "2"
+           },
+           {
+            value: "item3",
+            text: "3"
+           },
+           {
+            value: "item4",
+            text: "4"
+           },
+           {
+            value: "item5",
+            text: "5"
+           },
+           {
+            value: "item6",
+            text: "6"
+           },
+           {
+            value: "item7",
+            text: "7"
+           },
+           {
+            value: "item8",
+            text: "8"
+           },
+           {
+            value: "item9",
+            text: "9"
+           },
+           {
+            value: "item10",
+            text: "10"
+           }
+          ]
+         },
+         {
+          type: "checkbox",
+          name: "question7",
+          visibleIf: "{question3}=='Si'",
+          title: "Especie:",
+          choices: [
+           {
+            value: "item1",
+            text: "Perro"
+           },
+           {
+            value: "item2",
+            text: "Gato"
+           },
+           {
+            value: "item3",
+            text: "Otro"
+           }
+          ]
+         },
+         {
+          type: "comment",
+          name: "question6",
+          visibleIf: "{question3}=='Si'",
+          title: "¿Cuánto tiempo llevas con ellos?"
+         },
+         {
+          type: "radiogroup",
+          name: "question5",
+          visibleIf: "{question3}=='Si'",
+          title: "¿Son sociables con otros animales?",
+          choices: [
+           {
+            value: "item1",
+            text: "Si"
+           },
+           {
+            value: "item2",
+            text: "No"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        type: "radiogroup",
+        name: "question8",
+        title: "¿Has tenido animales de compañía anteriormente?",
+        choices: [
+         {
+          value: "item1",
+          text: "Si"
+         },
+         {
+          value: "item2",
+          text: "No"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
