@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
   <a class="navbar-brand" href="#">CanCan Callejero</a>
 
   <ul class="navbar-nav mr-auto">
@@ -9,12 +9,27 @@
       <a class="nav-link" href="#">Encuestas</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Disabled</a>
+      <a class="nav-link" (click)="logout()">Logout</a>
     </li>
   </ul>
-  <form class="form-inline my-2 my-lg-0">
-    <input class="form-control mr-sm-2" type="text" placeholder="Usuario">
-    <input class="form-control mr-sm-2" type="password" placeholder="Contrase&ntilde;a">
-    <button class="btn btn-success my-2 my-sm-0" type="submit">Ingresar</button>
+  <div *ngIf="loggedIn()" class="dropdown">
+      <a class="dropdown-toggle text-light">
+        Bienvenido usuario
+      </a>
+    
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Editar perfil</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#"> <i class="fa fa-sign-out"></i> Salir</a>
+      </div>
+    </div>
+
+
+  <form *ngIf="!loggedIn()" #loginForm="ngForm" class="form-inline my-2 my-lg-0" (ngSubmit)="login()">
+    <input class="form-control mr-sm-2" type="text" name="username" 
+    placeholder="Usuario" required [(ngModel)]="model.username">
+    <input class="form-control mr-sm-2" type="password" name="password" 
+    placeholder="Contrase&ntilde;a" required [(ngModel)]="model.password">
+    <button [disabled]="!loginForm.valid" class="btn btn-success my-2 my-sm-0" type="submit">Ingresar</button>
   </form>
 </nav>
